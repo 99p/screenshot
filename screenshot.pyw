@@ -16,6 +16,7 @@ class App(tk.Tk):
         self.canvas = tk.Canvas(self, width=w, height=h, bg='gray', highlightthickness=0)
         self.canvas.pack()
         self.b1 = self.bind('<Button-1>', self.rect_start)
+        self.b3 = self.bind('<Button-3>', lambda e:self.destroy())
         self.bm = self.bind('<B1-Motion>', self.rect_motion)
         self.br = self.bind('<ButtonRelease-1>', self.rect_end)
         self.q = self.bind('q', lambda e: self.destroy())
