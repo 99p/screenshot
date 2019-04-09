@@ -1,6 +1,7 @@
 import tkinter as tk
 import os.path
 from PIL import ImageGrab
+from datetime import datetime
 
 desktop = os.path.expanduser("~/Desktop/")
 
@@ -43,7 +44,7 @@ class App(tk.Tk):
             self.entry = tk.Entry(self, fg="black", bg="white", font="Calibri 40", relief=tk.FLAT)
             self.config(bg='white')
             self.wm_attributes("-alpha", .5)
-            self.entry.insert(tk.END, "screenshot")
+            self.entry.insert(tk.END, datetime.now().strftime("%Y%m%d_%H%M%S"))
             self.entry.place(relx=.43, rely=.43)
             self.entry.focus_set()
             self.entry.select_range(0, tk.END)
